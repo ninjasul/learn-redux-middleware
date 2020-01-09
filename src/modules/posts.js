@@ -19,6 +19,9 @@ const CLEAR_POST = 'CLEAR_POST';
 
 export const getPosts = createPromiseThunk(GET_POSTS, postAPI.getPosts);
 export const getPost = createPromiseThunkById(GET_POST, postAPI.getPostById());
+export const goToHome = () => (dispatch, getState, { history }) => {
+    history.push('/');
+};
 
 export const clearPost = () => ({ type: CLEAR_POST });
 
