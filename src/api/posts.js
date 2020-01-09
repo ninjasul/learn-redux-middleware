@@ -25,5 +25,5 @@ export function getPosts() {
 
 export function getPostById (id) {
     sleep(500);
-    return posts.map(post => post.id === id);
+    return posts.find(post => post.id === id);
 }
