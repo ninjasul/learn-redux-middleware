@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getPosts} from "../modules/posts";
-import PostList from "../components/Posts";
+import PostList from "../components/PostList";
 
 function PostListContainer() {
     const { data, loading, error } = useSelector(state => state.posts.posts);
@@ -10,6 +10,8 @@ function PostListContainer() {
     useEffect(() => {
         dispatch(getPosts());
     }, [dispatch]);
+
+    console.log({loading, data, error});
 
     if (loading) return <div>로딩중...</div>;
     if (error) return <div>에러 발생!</div>;

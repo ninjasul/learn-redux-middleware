@@ -26,13 +26,13 @@ export const reducerUtils = {
     }),
 
     success: (payload) => ({
-        loading: true,
+        loading: false,
         data: payload,
         error: null
     }),
 
     error: (error) => ({
-        loading: true,
+        loading: false,
         data: null,
         error: error
     })
